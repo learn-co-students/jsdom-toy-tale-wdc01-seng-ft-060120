@@ -13,3 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function fetchDogs() {
+  fetch('https://dog.ceo/api/breeds/image/random/4')
+  .then(resp => resp.json())
+  .then(json => dogPics(json));
+}
