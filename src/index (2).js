@@ -3,6 +3,8 @@ let addToy = false;
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-toy-btn");
   const toyFormContainer = document.querySelector(".container");
+  const addToyForm = document.querySelector(".add-toy-form")
+
   addBtn.addEventListener("click", () => {
     // hide & seek with the form
     addToy = !addToy;
@@ -15,7 +17,38 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchToys();
   const container = document.getElementById('toy-collection')
   container.addEventListener('click',increaseLikes);
+  addToyForm.addEventListener('submit', createNewToy)
+
+
 });
+
+function createNewToy(eventObj){
+  eventObj.preventDefault()
+  const name = eventObj.target.name.value
+  const imageURL = eventObj.target.image.value
+  const toy = {
+    // "id": 2,
+    "name": name,
+    "image": imageURL,
+    "likes": "0"
+  }
+  const configObj = {
+    method: "POST", 
+    headers: 
+    {
+      "Content-Type": "application/json",
+      "Accept":       "application/json"
+    },
+    body: JSON.stringify(toy)
+  }
+  fetch("http://localhost:3000/toys", configObj)
+  .then(response => response.json())
+  .then(response => {
+    addToysToDOM([response]);
+    eventObj.target.parentElement.style.display = "none";
+    eventObj.target.reset();
+  })
+}
 function increaseLikes(eventObj)
 {
   const tgt = eventObj.target
@@ -45,7 +78,7 @@ function updateLikes(id,likes)
   };
   fetch(`http://localhost:3000/toys/${id}`,configObj)
   .then(response => response.json())
-  .then(newResponse => console.log(newResponse))
+  // .then(newResponse => console.log(newResponse))
   .catch(error => console.log(error));
 }
 function fetchToys()
@@ -58,7 +91,6 @@ function fetchToys()
 }
 function addToysToDOM(toysPromise)
 {
-  console.log(toysPromise)
   for(const toy of toysPromise)
   {
     const div = document.createElement('div');
