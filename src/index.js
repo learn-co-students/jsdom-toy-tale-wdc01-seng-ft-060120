@@ -48,19 +48,20 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", (e) => {
     let toyCollection = document.getElementById('toy-collection')
 
-    e.preventDefault();
-  
+    
     if (e.target.matches(".like-btn")){
+      e.preventDefault();
+      
       let like = e.target.parentNode.querySelector('p').querySelector('span')
       let intLike = like.innerText = parseInt(like.innerText, 10) + 1;
-
+      
       let likeNumber = {
         likes: (intLike)
       }
       let targetId = (e.target.parentNode.id)
-
+      
       patchFetch((likeNumber), targetId)
-
+      
     }
   })
 
