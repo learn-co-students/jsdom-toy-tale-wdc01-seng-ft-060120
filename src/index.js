@@ -22,10 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
     toyArr.forEach(toy => {
     toyCard = document.createElement("div")
     toyCard.className = "card"
+    toyCard.id = `${toy.id}`
     toyCard.innerHTML = `
       <h2>${toy.name}</h2>
       <img src=${toy.image} class="toy-avatar" />
-      <p>${toy.likes} Likes </p>
+      <p><span id="likeNum">${toy.likes}</span> Likes </p>
       <button class="like-btn">Like <3</button>`
     toyCollection.append(toyCard)
     });
@@ -53,8 +54,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
-  document.addEventListener('click' function(e){
+  document.addEventListener('click', function(e){
     if(e.target.className == "like-btn"){
+      let targetObj = e.target.closest('div'); //gets parent card div of button clicked
+      let likeVal = targetObj.querySelector('p span') //gets span where number of likes is displayed
+      // configObject abstracted from/for .fetch()
+      let configObj = {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({"likes": (parseInt(likeVal.textContent) + 1)}) //pulling number from likeVal above^^
+      };
+      fetch(`http://localhost:3000/toys/${targetObj.id}`, configObj)
+        .then(resp => resp.json())
+        .then(obj => likeVal.innerHTML = obj.likes) // changing likeVal to new, incremented number returned from database (obj.likes).
       
     }
   });
