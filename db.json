@@ -28,7 +28,7 @@
       "id": 5,
       "name": "Rex",
       "image": "http://umich.edu/~chemh215/W11HTML/SSG5/ssg5.2/FRex.png",
-      "likes": "5"
+      "likes": "7"
     },
     {
       "id": 6,
@@ -46,12 +46,12 @@
       "id": 8,
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
-      "likes": "5"
+      "likes": "8"
     },
     {
       "name": "Infinity",
       "image": "https://target.scene7.com/is/image/Target/GUEST_71b9594e-738c-4aa2-b0d0-23b6fc2e4fb7?wid=488&hei=488&fmt=pjpeg",
-      "likes": "6",
+      "likes": "9",
       "id": 9
     }
   ]
