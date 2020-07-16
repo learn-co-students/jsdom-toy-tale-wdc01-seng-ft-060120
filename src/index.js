@@ -30,6 +30,33 @@ document.addEventListener("DOMContentLoaded", () => {
     toyCollection.append(toyCard)
     });
   }
+  const toyForm = document.querySelector(".add-toy-form")
 
+  toyForm.addEventListener("submit", function(e){
+    let formData = {
+      'name': `${e.target.name.value}`,
+      'image': `${e.target.image.value}`,
+      'likes': 0
+    };
+    let configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formData)
+    };
+    
+    fetch("http://localhost:3000/toys", configObj)
+    .then(resp => resp.json())
+    .then(console.log)
+
+  });
+
+  document.addEventListener('click' function(e){
+    if(e.target.className == "like-btn"){
+      
+    }
+  });
 
 });
