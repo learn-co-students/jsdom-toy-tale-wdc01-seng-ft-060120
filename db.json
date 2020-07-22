@@ -3,7 +3,7 @@
     {
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 8,
+      "likes": 66,
       "id": 1
     },
     {
@@ -13,15 +13,15 @@
       "likes": 17
     },
     {
-      "id": 3,
       "name": "Mr. Potato Head",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-      "likes": 16
+      "likes": 17,
+      "id": 3
     },
     {
       "name": "Slinky Dog",
       "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
-      "likes": 5,
+      "likes": 6,
       "id": 4
     },
     {
@@ -40,7 +40,7 @@
       "id": 7,
       "name": "Hamm",
       "image": "https://cdn140.picsart.com/244090226021212.png?r1024x1024",
-      "likes": 6
+      "likes": 9
     },
     {
       "id": 8,
