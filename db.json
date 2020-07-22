@@ -1,10 +1,10 @@
 {
   "toys": [
     {
-      "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 63
+      "likes": 8,
+      "id": 1
     },
     {
       "id": 2,
@@ -19,16 +19,16 @@
       "likes": 16
     },
     {
-      "id": 4,
       "name": "Slinky Dog",
       "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
-      "likes": 7
+      "likes": 5,
+      "id": 4
     },
     {
-      "id": 5,
       "name": "Rex",
       "image": "http://umich.edu/~chemh215/W11HTML/SSG5/ssg5.2/FRex.png",
-      "likes": 11
+      "likes": 2,
+      "id": 5
     },
     {
       "id": 6,
